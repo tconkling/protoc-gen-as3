@@ -33,14 +33,16 @@ dist/README: README | dist
 	cp README dist/README
 
 dist/protoc-gen-as3: | dist
-	echo '#!/bin/sh\ncd `dirname "$$0"`\njava -jar protoc-gen-as3.jar' > $@
+	(echo '#!/bin/sh';\
+	echo 'cd `dirname "$$0"` && java -jar protoc-gen-as3.jar') > $@
 	chmod +x $@
 
 dist/protoc-gen-as3.bat: | dist
-	echo '@echo off\r\ncd %~dp0\r\njava -jar protoc-gen-as3.jar' > $@
+	(echo '@cd %~dp0';\
+	echo '@java -jar protoc-gen-as3.jar') > $@
 	chmod +x $@
 
-dist/protobuf.swc: as3 | dist
+dist/protobuf.swc: $(wildcard as3/com/netease/protobuf/*.as) | dist
 	$(COMPC) -include-sources+=as3 -output=$@
 
 dist/protoc-gen-as3.jar: classes/com/netease/protocGenAs3/Main.class | dist
