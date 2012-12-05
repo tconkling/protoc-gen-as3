@@ -50,7 +50,7 @@ dist/options.proto: options.proto | dist
 dist/protoc-gen-as3: dist/protoc-gen-as3.jar dist/protobuf-java-$(PROTOBUF_VERSION).jar \
 	| dist
 	(echo '#!/bin/sh';\
-	echo 'cd `dirname "$$0"` && java -jar protoc-gen-as3.jar') > $@
+	echo 'cd "`dirname "$$0"`" && java -jar protoc-gen-as3.jar') > $@
 	chmod +x $@
 
 dist/protoc-gen-as3.bat: dist/protoc-gen-as3.jar dist/protobuf-java-$(PROTOBUF_VERSION).jar \
