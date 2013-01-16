@@ -100,7 +100,7 @@ public final class Main {
 			this.proto = proto;
 			this.export = export;
 			if (isRoot() || parent.isRoot()) {
-				fullName = name; 
+				fullName = name;
 			} else {
 				fullName = parent.fullName + '.' + name;
 			}
@@ -592,7 +592,7 @@ public final class Main {
 						content.append(valueTypeField);
 						content.append(":uint = 0;\n\n");
 					}
-					
+
 					content.append("\t\tpublic function clear");
 					appendUpperCamelCase(content, fdp.getName());
 					content.append("():void {\n");
@@ -985,7 +985,7 @@ public final class Main {
 		content.append(")");
 	}
 	private static void appendExtensionReadFunction(StringBuilder content,
-			String tabs, 
+			String tabs,
 			Scope<?> scope,
 			FieldDescriptorProto fdp) {
 		String extendee = scope.find(fdp.getExtendee()).fullName;
@@ -1112,7 +1112,7 @@ public final class Main {
 		}
 		content.append("}\n");
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private static void writeFiles(Scope<?> root,
 			CodeGeneratorResponse.Builder responseBuilder,
@@ -1136,7 +1136,7 @@ public final class Main {
 						writeServiceInterface((Scope<ServiceDescriptorProto>)scope, interfaceContent);
 						String[] servicePath = scope.fullName.split("\\.");
 						StringBuilder sb = new StringBuilder();
-						int i = 0; 
+						int i = 0;
 						for (; i < servicePath.length - 1; i++) {
 							sb.append(servicePath[i]);
 							sb.append('/');
@@ -1222,7 +1222,7 @@ public final class Main {
 			try {
 				scope.proto.getOptions().writeTo(buffer);
 			} catch (IOException e) {
-				throw new AssertionError("ByteArrayOutputStream should not throw IOException!", e);
+				throw new AssertionError("ByteArrayOutputStream should not throw IOException!");
 			}
 			for (byte b : buffer.toByteArray()) {
 				content.append("\\x");
@@ -1238,7 +1238,7 @@ public final class Main {
 			content.append("\t\t\treturn options;\n");
 			content.append("\t\t}\n\n");
 		}
-		
+
 		boolean hasMethodOptions = false;
 		for (MethodDescriptorProto mdp : scope.proto.getMethodList()) {
 			if (mdp.hasOptions()) {
@@ -1258,7 +1258,7 @@ public final class Main {
 				try {
 					mdp.getOptions().writeTo(buffer);
 				} catch (IOException e) {
-					throw new AssertionError("ByteArrayOutputStream should not throw IOException!", e);
+					throw new AssertionError("ByteArrayOutputStream should not throw IOException!");
 				}
 				for (byte b : buffer.toByteArray()) {
 					content.append("\\x");
@@ -1342,7 +1342,7 @@ public final class Main {
 		content.append("\t}\n");
         content.append("}\n");
 	}
-	
+
 	private static void writeServiceInterface(
 			Scope<ServiceDescriptorProto> scope,
 			StringBuilder content) {
