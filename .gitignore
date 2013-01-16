@@ -1,0 +1,13 @@
+*.class
+dist/
+descriptor.proto.as3/
+unittest.proto.as3/
+plugin.proto.java/
+options.proto.java/
+config.mk
+MANIFEST.MF
+*.swf
+*.swc
+unittest.bin
+obj/
+doc/
