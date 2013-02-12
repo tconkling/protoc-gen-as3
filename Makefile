@@ -62,7 +62,7 @@ dist/protoc-gen-as3.bat: dist/protoc-gen-as3.jar dist/protobuf-java-$(PROTOBUF_V
 COMMA=,
 
 dist/protobuf.swc: $(wildcard as3/com/netease/protobuf/*/*.as as3/com/netease/protobuf/*.as) descriptor.proto.as3/google | dist
-	$(COMPC) -target-player=10 \
+	$(COMPC) -target-player=11 \
 	-source-path+=as3,descriptor.proto.as3 \
 	-include-sources+=as3 \
 	-output=$@
@@ -71,7 +71,7 @@ doc: \
 $(wildcard as3/com/netease/protobuf/*/*.as as3/com/netease/protobuf/*.as) \
 descriptor.proto.as3/google \
 | dist
-	$(ASDOC) -target-player=10 \
+	$(ASDOC) -target-player=11 \
 	--doc-sources+=as3 \
 	--source-path+=descriptor.proto.as3 \
 	-output=$@ \
@@ -98,7 +98,7 @@ options.proto.java descriptor.proto.as3 classes plugin.proto.java unittest.proto
 ifndef PROTOC
 PROTOC=$(PROTOBUF_DIR)/src/protoc$(EXE)
 PROTOCDEPS=$(PROTOC)
-$(PROTOC): $(PROTOBUF_DIR)/Makefile 
+$(PROTOC): $(PROTOBUF_DIR)/Makefile
 	cd $(PROTOBUF_DIR) && $(MAKE)
 
 $(PROTOBUF_DIR)/Makefile: $(PROTOBUF_DIR)/configure
@@ -135,7 +135,7 @@ haxe-test: haxe-test.swf
 haxe-test.swc: test/com/netease/protobuf/test/TestAll.as \
 	dist/protobuf.swc test.swc descriptor.proto.as3/google unittest.bin
 	$(RM) -r $@
-	$(COMPC) -target-player=10 \
+	$(COMPC) -target-player=11 \
 	-directory -include-sources+=$< \
 	-source-path+=descriptor.proto.as3 \
 	-library-path+=test.swc,dist/protobuf.swc \
@@ -149,19 +149,19 @@ haxe-test.swf: haxe-test.swc test/com/netease/protobuf/test/HaxeTest.hx test.swf
 test.swf: test.swc test/com/netease/protobuf/test/TestAll.as \
 	test/com/netease/protobuf/test/Test.mxml dist/protobuf.swc \
 	descriptor.proto.as3/google unittest.bin
-	$(MXMLC) -target-player=10 \
+	$(MXMLC) -target-player=11 \
 	-library-path+=test.swc,dist/protobuf.swc -output=$@ \
 	-source-path+=descriptor.proto.as3,test test/com/netease/protobuf/test/Test.mxml -debug
 
 test.swc: unittest.proto.as3/protobuf_unittest dist/protobuf.swc
-	$(COMPC) -target-player=10 \
+	$(COMPC) -target-player=11 \
 	-include-sources+=unittest.proto.as3 \
 	-external-library-path+=dist/protobuf.swc -output=$@
 
 options.proto.java/com: \
 	options.proto \
 	$(PROTOCDEPS) \
-	| options.proto.java 
+	| options.proto.java
 	$(PROTOC) \
 	--proto_path=. \
 	"--proto_path=$(PROTOBUF_DIR)/src" \
