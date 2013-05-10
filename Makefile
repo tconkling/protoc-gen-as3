@@ -14,13 +14,13 @@ endif
 
 ALL=dist/protoc-gen-as3 dist/protoc-gen-as3.bat dist/LICENSE \
 	dist/protobuf.swc dist/README dist/options.proto \
-	dist/protoc-gen-as3.jar dist/protobuf-java-$(PROTOBUF_VERSION).jar \
-	dist/run.n dist/haxelib.xml
+	dist/protoc-gen-as3.jar dist/protobuf-java-$(PROTOBUF_VERSION).jar
+#	dist/run.n dist/haxelib.xml
 
 all: $(ALL)
 
 dist/haxelib.xml: haxelib.xml
-	install --mode=644 $< $@
+	install -m 644 $< $@
 
 dist/run.n: hx/com/dongxiguo/protobuf/Run.hx
 	haxe -cp hx -lib haxelib-run -main com.dongxiguo.protobuf.Run -neko $@
@@ -47,16 +47,16 @@ dist.tar.gz: $(ALL)
 
 release.zip: $(ALL)
 	 zip --junk-paths --filesync $@ $^
-	
+
 
 dist/LICENSE: LICENSE | dist
-	install --mode=644 $< $@
+	install -m 644 $< $@
 
 dist/README: README | dist
-	install --mode=644 $< $@
+	install -m 644 $< $@
 
 dist/options.proto: options.proto | dist
-	install --mode=644 $< $@
+	install -m 644 $< $@
 
 dist/protoc-gen-as3: dist/protoc-gen-as3.jar dist/protobuf-java-$(PROTOBUF_VERSION).jar \
 	| dist
@@ -73,7 +73,7 @@ dist/protoc-gen-as3.bat: dist/protoc-gen-as3.jar dist/protobuf-java-$(PROTOBUF_V
 COMMA=,
 
 dist/protobuf.swc: $(wildcard as3/com/netease/protobuf/*/*.as as3/com/netease/protobuf/*.as) descriptor.proto.as3/google | dist
-	$(COMPC) -target-player=11 \
+	$(COMPC) -target-player=11.1 \
 	-source-path+=as3,descriptor.proto.as3 \
 	-include-sources+=as3 \
 	-output=$@
@@ -82,7 +82,7 @@ doc: \
 $(wildcard as3/com/netease/protobuf/*/*.as as3/com/netease/protobuf/*.as) \
 descriptor.proto.as3/google \
 | dist
-	$(ASDOC) -target-player=11 \
+	$(ASDOC) -target-player=11.1 \
 	--doc-sources+=as3 \
 	--source-path+=descriptor.proto.as3 \
 	-output=$@ \
