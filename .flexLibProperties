@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
-  <includeClasses/>
+<flexLibProperties includeAllClasses="false" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="com.netease.protobuf.BaseFieldDescriptor"/>
+    <classEntry path="com.netease.protobuf.Binary64"/>
+    <classEntry path="com.netease.protobuf.FieldDescriptor"/>
+    <classEntry path="com.netease.protobuf.IFieldDescriptor"/>
+    <classEntry path="com.netease.protobuf.Int64"/>
+    <classEntry path="com.netease.protobuf.Message"/>
+    <classEntry path="com.netease.protobuf.ReadUtils"/>
+    <classEntry path="com.netease.protobuf.RepeatedFieldDescriptor"/>
+    <classEntry path="com.netease.protobuf.SimpleWebRPC"/>
+    <classEntry path="com.netease.protobuf.TextFormat"/>
+    <classEntry path="com.netease.protobuf.UInt64"/>
+    <classEntry path="com.netease.protobuf.WireType"/>
+    <classEntry path="com.netease.protobuf.WriteUtils"/>
+    <classEntry path="com.netease.protobuf.WritingBuffer"/>
+    <classEntry path="com.netease.protobuf.ZigZag"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_BOOL"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_BYTES"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_DOUBLE"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_ENUM"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_FIXED32"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_FIXED64"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_FLOAT"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_INT32"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_INT64"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_MESSAGE"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_SFIXED32"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_SFIXED64"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_SINT32"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_SINT64"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_STRING"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_UINT32"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.FieldDescriptor$TYPE_UINT64"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_BOOL"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_BYTES"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_DOUBLE"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_ENUM"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_FIXED32"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_FIXED64"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_FLOAT"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_INT32"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_INT64"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_MESSAGE"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_SFIXED32"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_SFIXED64"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_SINT32"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_SINT64"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_STRING"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_UINT32"/>
+    <classEntry path="com.netease.protobuf.fieldDescriptors.RepeatedFieldDescriptor$TYPE_UINT64"/>
+    <classEntry path="com.netease.protobuf.stringToByteArray"/>
+    <classEntry path="com.netease.protobuf.used_by_generated_code"/>
+  </includeClasses>
   <includeResources/>
   <namespaceManifests/>
 </flexLibProperties>
