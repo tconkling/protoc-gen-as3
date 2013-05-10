@@ -509,7 +509,7 @@ public final class Main {
 			remoteClassAlias = null;
 		}
 		content.append("\t// @@protoc_insertion_point(class_metadata)\n");
-		content.append("\tpublic dynamic final class ");
+		content.append("\tpublic final class ");
 		content.append(scope.proto.getName());
 		content.append(" extends com.netease.protobuf.Message");
 		if (remoteClassAlias != null) {
