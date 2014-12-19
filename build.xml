@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes"?>
+<project name="protobuf" default="swc" basedir=".">
+  <property environment="env"/>
+  <property name="airsdk.dir" value="${env.AIR_HOME}"/>
+  <property name="src.dir" location="as3"/>
+  <property name="src2.dir" location="descriptor.proto.as3"/>
+  <property name="swc.name" value="${ant.project.name}.swc"/>
+
+  <target name="swc" description="builds the swc library">
+    <mkdir dir="dist"/>
+
+    <!-- build the swf -->
+    <java jar="${airsdk.dir}/lib/compc-cli.jar" failonerror="true" fork="true" maxmemory="1024m">
+      <jvmarg value="-Djava.awt.headless=true"/>
+      <arg value="+configname=air"/>
+      <arg value="-load-config=${airsdk.dir}/frameworks/air-config.xml"/>
+      <arg value="-compiler.source-path=${src.dir}"/>
+      <arg value="-verbose-stacktraces=true"/>
+      <arg value="-compiler.debug=true"/>
+      <arg value="-compiler.optimize=true"/>
+      <arg value="-compiler.omit-trace-statements=false"/>
+      <arg value="-include-sources=${src.dir}"/>
+      <arg value="-include-sources=${src2.dir}"/>
+      <arg value="-output=dist/${swc.name}"/>
+    </java>
+
+  </target>
+
+</project>
