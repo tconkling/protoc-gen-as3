@@ -345,13 +345,22 @@ package com.netease.protobuf {
 					continue
 				case 0x23:/* # */
 					for (;;) {
-						switch (source.read()) {
-						case 0x0a:/* \n */
-						case 0x0d:/* \r */
-							break 
-						}
-					}
-					break
+                        var isLineEnd:Boolean = false;
+                        switch (source.read()) {
+                        case 0x0a:/* \n */
+                        case 0x0d:/* \r */
+                            isLineEnd = true
+                            break
+                        /* this default clause is necessary to avoid a corrupted swc */
+                        default:
+                            break
+                        }
+
+                        if(isLineEnd) {
+                            break
+                        }
+                    }
+                    break
 				default:
 					source.unread(b)
 					return
